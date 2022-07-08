@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Long Term Investing</title>
+
+	<script type="text/javascript" src="InterestCalculator.js"></script>
+
+	<style>
+		#logo_icon {
+			height: 80px;
+			width: 200px;
+		}
+
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #f0f0f0;
+		}
+
+		li {
+		float: left;
+	}
+
+	li a {
+		display: block;
+		color: #757575;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-family: Verdana;
+	}
+
+	li a:hover:not(.current) {
+		background-color: #dbdbdb; 
+	}
+
+	.current {
+		background-color: #5997d7;
+		color: white;
+	}
+	
+  	table {
+  		border: none;
+  	}
+  	
+  	h1 {
+  		font-family: Verdana;
+  	}
+
+	h3 {
+  		font-family: Verdana;
+  	}
+  	
+  	p {
+  		font-family: Verdana;
+  	}
+  	
+  	button {
+  		padding: 14px 16px;
+  		border: none;
+		background-color: #5997d7;
+  		color: white;
+  		font-family: Verdana;
+		text-decoration: none;
+		text-align: center;
+		font-size: 16px;
+  	}
+  	
+  	button:active {
+  		background-color: #4879ab;
+  		cursor: pointer;
+  	}
+  	
+  	button:hover {
+  		background-color: #dbdbdb;
+  		cursor: pointer;
+  	}
+
+	#button2 {
+  		padding: 14px 16px;
+  		border: none;
+  		background-color: #f0f0f0;
+  		color: #757575;
+  		font-family: Verdana;
+		text-decoration: none;
+		font-family: Verdana;
+		text-align: center;
+		font-size: 16px;
+  	}
+  	
+  	#button2:active {
+  		background-color: #4879ab;
+  		cursor: pointer;
+  	}
+  	
+  	#button2:hover {
+  		background-color: #dbdbdb;
+  		cursor: pointer;
+  	}
+
+
+	.dropdown-content {
+  		display: none;
+ 		position: absolute;
+  		background-color: #f0f0f0;
+ 		z-index: 1;
+	}
+
+	.dropdown-content a {
+  		float: none;
+  		color: #757575;
+  		padding: 14px 16px;
+  		text-decoration: none;
+  		display: block;
+  		text-align: left;
+	}
+
+	.dropdown-content a:hover {
+  		background-color: #dbdbdb;
+	}
+
+	.dropdown:hover .dropdown-content {
+ 		 display: block;
+	}
+
+	td {
+  		text-align: left;
+  		padding: 8px;
+  		font-family: Verdana;
+  	}
+  	
+  	#buttonsubmit {
+  		padding: 12px 14px;
+  		border: none;
+  		background-color: #5997d7;
+  		color: white;
+  		font-family: Verdana;
+  		font-size: 16px;
+  	}
+	
+	#buttonsubmit {
+		width: 100px;
+	}
+  	
+  	#buttonsubmit:active {
+  		background-color: #4879ab;
+  		cursor: pointer;
+  	}
+  	
+  	#buttonsubmit:hover {
+  		background-color: #528bc4;
+  		cursor: pointer;
+  	}
+  	
+  	input[type=text] {
+  		width: 150px;
+  		padding: 6px 6px;
+  		box-sizing: border-box;
+  		border: none;
+  		border-bottom: 2px solid #5997d7;
+  		background-color: #F5F5F5;
+  		font-family: Verdana;
+  	}
+  	
+  	input[type=text]:hover {
+  		width: 150px;
+  		padding: 6px 6px;
+  		box-sizing: border-box;
+  		border: none;
+  		border-bottom: 2px solid #5997d7;
+  		background-color: #EDEDED;
+  		font-family: Verdana;
+  	}
+  	
+  	input[type=text]:focus {
+  		width: 150px;
+  		padding: 6px 6px;
+  		box-sizing: border-box;
+  		border: none;
+  		border-bottom: 2px solid #5997d7;
+  		background-color: #DCDCDC;
+  		font-family: Verdana;
+  	}
+
+	select {
+  		width: 150px;
+  		padding: 6px 6px;
+  		box-sizing: border-box;
+  		border: none;
+  		border-bottom: 2px solid #5997d7;
+  		background-color: #F5F5F5;
+  		font-family: Verdana;
+  	}
+  	
+  	select:hover {
+  		width: 150px;
+  		padding: 6px 6px;
+  		box-sizing: border-box;
+  		border: none;
+  		border-bottom: 2px solid #5997d7;
+  		background-color: #EDEDED;
+  		font-family: Verdana;
+  	}
+  	
+  	select:focus {
+  		width: 150px;
+  		padding: 6px 6px;
+  		box-sizing: border-box;
+  		border: none;
+  		border-bottom: 2px solid #5997d7;
+  		background-color: #DCDCDC;
+  		font-family: Verdana;
+  	}
+
+	
+
+	</style>
+
+</head>
+
+<body>
+
+<img src="INSERT PNG" alt="INSERT IMAGE DESCRIPTION" id="logo_icon">
+
+<ul>
+	<li><a href="Home.html">Home</a></li>
+	<li><a href="TechnicalAnalysis.html">Technical Analysis</a></li>
+	<li><a href="FundamentalAnalysis.html">Fundamental Analysis</a></li>
+	<li>
+	<div class="dropdown">
+    		<button class="dropbtn">Investing Strategies</button>
+    		<div class="dropdown-content">
+      			<a href="LongTermInvesting.html">Long Term Investing</a>
+     		 	<a href="DividendInvesting.html">Dividend Growth Investing</a>
+      			<a href="DayTrading.html">Day Trading</a>
+			<a href="OptionsTrading.html">Options Trading</a>
+   		</div>
+  	</div>
+	</li>
+	<li>
+		<div class="dropdown">
+    		<button id="button2" class="dropbtn">Market Types</button>
+    		<div class="dropdown-content">
+      			<a href="BullMarket.html">Bull Market</a>
+     		 	<a href="BearMarket.html">Bear Market</a>
+   		</div>
+  	</div>
+	</li>
+	<li><a href="About.html">About</a>
+</ul>
+
+<h1>Long Term Investing</h1>
+<p>Long term investing is one of the most effective and easiest ways to make money that anyone can do.</p>
+
+<table>
+		<tbody><tr>
+			<td><label for="principal">Principal Amount ($)</label></td>
+			<td><input type="text" id="principal" name="principal"></td>
+			<td id="principalp"></td>
+		</tr>
+		<tr>
+			<td><label for="time">Time Invested (years)</label></td>
+			<td><input type="text" id="time" name="time"></td>
+			<td id="timep"></td>
+		</tr>
+		<tr>
+			<td><label for="returnrate">Return Rate (%)</label></td>
+			<td><input type="text" id="returnrate" name="returnrate"></td>
+			<td id="returnratep"></td>
+		</tr>
+		<tr>
+			<td><label for="addcont">Additional Contribution ($) [Optional]</label></td>
+			<td><input type="text" id="addcont" name="addcont"></td>
+			<td id="addcontp"></td>
+		</tr>
+		<tr>
+			<td><label for="timelength">Contribute at the end of each (timespan)</label></td>
+			<td><select id="timelength" name="timelength">
+				<option value="select"></option>
+				<option value="yearly">Yearly</option>
+				<option value="semi-annually">Semi-Annually</option>
+				<option value="quarterly">Quarterly</option>
+				<option value="bimonthly">Bimonthly</option>
+ 				<option value="monthly">Monthly</option>
+ 				<option value="biweekly">Biweekly</option>
+ 				<option value="weekly">Weekly</option>
+				<option value="daily">Daily</option>
+				</td>
+			<td id="timelengthp"></td>
+		</tr>
+	</tbody></table>
+
+<p id="answer"></p>
+<button id="buttonsubmit" onclick="InvestmentCalculator()">Calculate</button>
+
+<h3>Why should you invest for the long term?</h3>
+<p>In short, it is the easiest way to get rich. People like Warren Buffet and Charlie Munger abused long term investing in order to become billionaires, and you should too.
+<br>
+Using the average return rate for the S&P since its creation in 1926 (9.8%), a starting balance of $10000, and a monthly contribution of $100, it is clear to see why this strategy is so successful.
+<br>
+If the money is left for 30 years, your investment grows to a stagering $363,684.89, only $46,000 of which coming from your pocket.
+<br>
+If the money is left for 10 more years for a total of 40, you are left with $946,072.53, having contributed only $58,000.
+<br>
+If the money is left for another 10 years (50 total years), you are left with $2,429,394.92, having contributed only $70,000.
+<br>
+This is a life changing amount to most people, and what is even more shocking is how easily it can be achieved.
+<br>
+<p>
+While $70,000 in contributions is a lot, if you cut down on unnecessary small things and keep a budget, you can easily save $100 or more depending on your job.
+Needless to say, if you choose to contribute more, you will have greater returns. Long term investing brings light to the saying money attracts money and shows regular people how they can attain unfathomable wealth through relatively simple means.
+
+
+</body>
+</html>
