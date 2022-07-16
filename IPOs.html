@@ -2,7 +2,9 @@
 
 <html>
 <head>
-	<title>Investing Strategies</title>
+	<title>IPOs</title>
+
+	<script type="text/javascript" src="InterestCalculator.js"></script>
 
 	<style>
 		#logo_icon {
@@ -77,6 +79,28 @@
   		cursor: pointer;
   	}
 
+	#button2 {
+  		padding: 14px 16px;
+  		border: none;
+  		background-color: #f0f0f0;
+  		color: #757575;
+  		font-family: Verdana;
+		text-decoration: none;
+		font-family: Verdana;
+		text-align: center;
+		font-size: 16px;
+  	}
+  	
+  	#button2:active {
+  		background-color: #4879ab;
+  		cursor: pointer;
+  	}
+  	
+  	#button2:hover {
+  		background-color: #dbdbdb;
+  		cursor: pointer;
+  	}
+
 	.dropdown-content {
   		display: none;
  		position: absolute;
@@ -101,27 +125,46 @@
  		 display: block;
 	}
 
-	#button2 {
-  		padding: 14px 16px;
-  		border: none;
-  		background-color: #f0f0f0;
-  		color: #757575;
+	td {
+  		text-align: left;
+  		padding: 8px;
   		font-family: Verdana;
-		text-decoration: none;
-		font-family: Verdana;
-		text-align: center;
-		font-size: 16px;
   	}
   	
-  	#button2:active {
-  		background-color: #4879ab;
-  		cursor: pointer;
+  	input[type=text] {
+  		width: 150px;
+  		padding: 6px 6px;
+  		box-sizing: border-box;
+  		border: none;
+  		border-bottom: 2px solid #5997d7;
+  		background-color: #F5F5F5;
+  		font-family: Verdana;
   	}
   	
-  	#button2:hover {
-  		background-color: #dbdbdb;
-  		cursor: pointer;
+  	input[type=text]:hover {
+  		width: 150px;
+  		padding: 6px 6px;
+  		box-sizing: border-box;
+  		border: none;
+  		border-bottom: 2px solid #5997d7;
+  		background-color: #EDEDED;
+  		font-family: Verdana;
   	}
+  	
+  	input[type=text]:focus {
+  		width: 150px;
+  		padding: 6px 6px;
+  		box-sizing: border-box;
+  		border: none;
+  		border-bottom: 2px solid #5997d7;
+  		background-color: #DCDCDC;
+  		font-family: Verdana;
+  	}
+
+	#fitbitgraph {
+		width: 1200px;
+		height: 600px;
+	}
 
 	</style>
 
@@ -135,7 +178,7 @@
 	<li><a href="Home.html">Home</a></li>
 	<li>
 		<div class="dropdown">
-    		<button class="dropbtn">Market Analysis</button>
+    		<button id="button2" class="dropbtn">Market Analysis</button>
     		<div class="dropdown-content">
       			<a href="FundamentalAnalysis.html">Fundamental Analysis</a>
      		 	<a href="TechnicalAnalysis.html">Technical Analysis</a>
@@ -175,7 +218,7 @@
 	</li>
 	<li>
 		<div class="dropdown">
-    		<button id="button2" class="dropbtn">New Companies</button>
+    		<button class="dropbtn">New Companies</button>
     		<div class="dropdown-content">
       			<a href="IPOs.html">IPOs</a>
      		 	<a href="SPACs.html">SPACs</a>
@@ -221,24 +264,21 @@
 	<li><a href="About.html">About</a>
 </ul>
 
-<h1>Technical Analysis</h1>
-<p>Technical analysis is the use of charting and indicators to predict the future movement of a ticker, currency, or index.</p>
+<h1>IPOs</h1>
+<p>An IPO is an intial public offering, meaning a company is made public and shares of that company are able to be bought and sold.
+<br>
+<br>
+IPOs tend to be very volatile, as not many people know their true value. This can lead to IPOs shooting up in the weeks/months after release or crashing down.
+<br>
+<br>
+For example, in 2015, Fitbit was the IPO that everyone was watching. Their watches were going viral and people were excited to be able to invest in a company.
+<br>
+<br>
+<img id="fitbitgraph" src="fitbitalltimechart.png" alt="Fitbit all time chart">
+<br>
+<br>
+As shown in Fitbit's all time chart, it opened at 20.00 and quickly rose to the high 40s. Soon after tho, the hype died down and stock declined rapidly as people realized that the company wasn't worth as much as they once thought. Now, the stock has stabilized around the 6.50 mark, where it doesn't move much.
 
-<h3>Charting</h3>
-<p>There are many different ways to chart, but the overall goal is to identify patterns that have the highest probability of continuing into the future. A common strategy is to look for resistance and support.
-Support is a price that if a ticker falls to, many people and algorithms will buy it, causing the price to not fall below that level. Resistance is a price that if the ticker rises to, many people and algorithms will sell the stock, causing the price to lower due to increased selling volume.
-Traders use support and resistance in order to gage when they should buy/sell a position. A trader may buy into a position if they see a ticker bounce off of its support, as the trader believes the ticker is not going to fall below that support, so being bullish is safer.
-Breaking resistance/support also helps traders the direction of a stock. If a ticker breaks through resistance, that is a very bullish sign as the increased selling pressure that comes with being at a level of resistance wasn't enough to stop the rise of the stock.</p>
-<img src="support-and-resistance.gif" alt="Support and resistance example" id="supp-resist">
-<p>In the above example, there is a level of resistance between 100,000 and 120,000 and a level of support just above 40,000.
-An investor, knowing that this ticker had bounced off the support in the past, could choose to buy in right after the stock bounces off support as, judging from the past, there is a high probability of this working.
-In this case, the support and resistance was formed over a period of multiple months, but support/resistance can be formed on any time frame, whether it be intraday or over decades. Overall, charting these levels is very helpful for an investor to know when to enter and exit a position.</p>
-
-<br></br>
-
-<h3>Indicators</h3>
-<p>Indicators are tools that help investors predict the future movement of a ticker based on an equation. Most indicators are created because people saw patterns and worked backwards to find indicators that predicted the movement. There are many indicators, RSI, MACD, and 50 day MA being a few examples.
-All indicators are found using different methods, but they all serve the same purpose of helping investors make better choices. While by themselves indicators are not enough to sway an investor's view on a stock, many indicators pointing to the same conclusion can make it obvious to an investor that a trend is forming.</p>
 
 </body>
 </html>

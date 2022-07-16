@@ -124,3 +124,54 @@ function InvestmentCalculator() {
 		}
 	}
 }
+
+function Calc401k () {
+	var sal = document.getElementById("salary").value.toString();
+	var s = parseFloat(sal);
+
+	var cont = document.getElementById("contributeper").value.toString();
+	var c = parseFloat(cont);
+
+	var max = document.getElementById("maxper").value.toString();
+	var m = parseFloat(max);
+	
+	var time = document.getElementById("time").value.toString();
+	var t = parseFloat(time);
+
+	var rate = document.getElementById("returnrate").value.toString();
+	var r = parseFloat(rate);
+	
+	//Yearly contribution by person
+	var pcont = s * (c/100);
+
+	//Yearly contribution by employer
+	if(c<=m) {
+		var econt = s * (c/100);
+	}
+	else if (c>m) {
+		var econt = s * (m/100);
+	}
+	
+	//Find total yearly contribution
+	var ycont = econt + pcont;
+
+	
+	//Find the final balance
+
+	var tempbal = 0;
+	for(i = 0;  i<t; i++) {
+		tempbal = tempbal * (1 + (r/100)) + ycont;
+	}
+	var finalbal = tempbal.toString();
+
+
+	//Formatting the answer
+	
+	if(finalbal.includes(".")) {
+		finalbal = finalbal.substring(0,finalbal.indexOf(".") + 3)
+	}
+	else {
+		finalbal = finalbal + ".00";
+	}
+	document.getElementById("answer").innerHTML = "Final Balance: $" + finalbal;
+}
